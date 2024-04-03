@@ -1,0 +1,187 @@
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Hamburger */
+.hamburger-container {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 80%;
+  transform: translateY(-50%);
+}
+
+.nav.open .hamburger-container {
+  top: 45%; /* Posisi saat nav terbuka */
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.nav.open .hamburger span {
+  background-color: #fff;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+.hamburger.open span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+/* Navbar Menu */
+.navbar-menu {
+  display: flex;
+  transform: translateY(-600%);
+  transition: transform 0.3s ease;
+}
+
+.navbar-menu.open {
+  transform: translateY(-35%);
+}
+
+.navbar-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navbar-menu li {
+  font-size: 12px;
+}
+
+.left {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (min-width: 426px) {
+  .hamburger-container {
+    display: block;
+  }
+
+  .nav.open {
+    background-color: #000;
+    transform: translateY(0%);
+    transition: all 0.3 ease;
+    padding-bottom: 40px;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 100%;
+    background-color: transparent;
+    padding: 1rem;
+    transform: translateY(-200%);
+  }
+
+  .navbar-menu.open {
+    display: block;
+    transform: translateY(0%);
+  }
+
+  .navbar-menu ul {
+    flex-direction: row;
+  }
+
+  .navbar-menu li {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+
+  
+  .navbar-menu {
+    display: block;
+    transform: none;
+  }
+  .navbar-menu li {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 425) {
+  .hamburger-container {
+    display: block;
+  }
+
+  .hamburger span {
+    background-color: #000;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    background-color: transparent;
+    padding: 1rem;
+    transform: translateX(-300%); /* Geser ke kiri 300% */
+  }
+
+  .navbar-menu.open {
+    display: block;
+    transform: translateX(0); /* Posisi normal */
+  }
+
+  .navbar-menu ul {
+    flex-direction: column;
+  }
+
+  .navbar-menu li {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}

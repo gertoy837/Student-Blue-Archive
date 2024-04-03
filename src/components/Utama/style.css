@@ -1,0 +1,74 @@
+/* Header small */
+header {
+  background-color: transparent;
+  color: #000;
+  position: sticky;
+}
+
+.right ul {
+  display: flex;
+  display: none;
+  list-style-type: none;
+}
+
+.right ul li {
+  padding: 0 10px;
+}
+
+.right ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.right ul li a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+/* Header Meduim */
+@media screen and (max-width: 425px) {
+    .right ul li a {
+        color: #000;
+    }
+
+    .right ul li a:hover {
+        color: #353535;
+    }
+
+    .right img {
+      width: 50%;
+    }
+}
+
+/* Header Large */
+@media screen and (min-width: 992px) {
+    .right ul li a {
+        color: #000;
+    }
+
+    .right ul li a:hover {
+        color: #353535;
+    }
+}
+
+.hero img {
+  height: auto;
+  margin-top: -55px;
+  z-index: -999999;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: #fff;
+  border-top: 2px solid #222831;
+  padding-top: 1rem;
+}
+
+footer p {
+  font-weight: bold;
+}
